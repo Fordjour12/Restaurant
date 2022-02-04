@@ -1,0 +1,93 @@
+
+Todo:
+  ✔ setup linting @done(22-02-03 01:25)
+  ✔ push to github @done(22-02-03 01:41)
+  ✔ write a README.md files @done(22-02-03 18:22)
+
+  routes:
+    foods:
+      ☐ getAll
+      ☐ get/:id
+      ☐ post
+      ☐ update/:id
+      ☐ delete/:id
+    
+    users:
+      ☐ post (order food)
+      ☐ update/:id
+
+
+  model:
+    ☐ create schema for the database
+    food:
+      ☐ create food schema
+      ☐ name food
+      ☐ food image
+      ☐ food price 
+      ☐ food decription(eg.jollof with chicken)
+      ☐ food type (eg rice pizza)
+      ☐ created at 
+      ☐ updated at
+    
+    user:
+      ☐ create a user schema
+      ☐ username
+      ☐ email
+      ☐ password
+      ☐ created At
+      ☐ updated At
+
+
+  controller:
+    ☐ login
+    ☐ signup
+    ☐ logout
+    ☐ jwt access tokens
+    ☐ jwt refresh tokens
+    ☐ jwt refresh token verfication
+
+    food controller:
+      ☐ controller for get foods
+      ☐ controller for single foods with id
+      ☐ controller for post new foods
+      ☐ controller for update old/new foods
+      ☐ controller for delete foods
+
+    user controller: 
+      ☐ controller for get foods
+      ☐ controller for single foods with id
+      ☐ controller for post new foods
+      ☐ controller for update old/new foods
+      ☐ controller for delete foods
+    
+    will be done later when all the application takes shape
+    ✘ controller for payments with mtn momo api @cancelled(22-02-03 00:44)
+    ✘ discount codes for ap users @cancelled(22-02-03 05:49)
+  middleware:
+    ☐ isAuth/ano
+    ☐ upload image
+    ☐ validation
+  
+  env:
+    ☐ create a .env file
+  
+  helper:
+    ☐ mongoose connection helper
+    ☐ redis connection helper
+    ☐ jsonwebtoken helper 
+    ☐ generate_key helpers
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+{
+	"name": "restaurants",
+	"version": "1.0.0",
+	"description": "<https://thephantombistro.site> is the Restaurant application that is used for ordering food and also managing all data in the admin section.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "",
+		"directory": "../../Fullstack Developments/Restaurants"
+	},
+	"author": "Bobie Fordjour McCamble Kofi",
+	"license": "MIT"
+}
