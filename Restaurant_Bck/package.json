@@ -1,22 +1,36 @@
 {
-  "name": "restaurant-bck",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "dotenv": "^16.0.0",
-    "express": "~4.16.1",
-    "http-errors": "^2.0.0",
-    "joi": "^17.6.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.0",
-    "morgan": "~1.9.1",
-    "multer": "^1.4.4",
-    "redis": "^4.0.3"
-  }
+	"name": "restaurant-bck",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"start": "node ./bin/www",
+		"dev": "nodemon ./bin/www"
+	},
+	"author": {
+		"name": "Bobie Fordjour McCamble Kofi",
+		"email": "fordjourbobiem@gmail.com",
+		"url": "https://thephantomdev.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Fordjour12/Restaurant.git",
+		"directory": "../Restaurant_Bck"
+	},
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"cookie-parser": "~1.4.4",
+		"debug": "~2.6.9",
+		"dotenv": "^16.0.0",
+		"express": "~4.16.1",
+		"http-errors": "^2.0.0",
+		"joi": "^17.6.0",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^6.2.0",
+		"morgan": "~1.9.1",
+		"multer": "^1.4.4",
+		"redis": "^4.0.3"
+	},
+	"devDependencies": {
+		"eslint": "^8.8.0"
+	}
 }
