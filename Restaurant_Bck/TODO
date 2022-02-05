@@ -3,7 +3,7 @@ Restaurant Backend:
   ✔ setup linting @done(22-02-03 01:25)
   ✔ push to github @done(22-02-03 01:41)
   ✔ write a README.md files @done(22-02-03 18:22)
-
+  ✔ init the database @started(22-02-05 00:13) @done(22-02-05 00:38) @lasted(25m10s)
   routes:
     foods:
       ☐ getAll
@@ -18,24 +18,25 @@ Restaurant Backend:
 
 
   model:
-    ☐ create schema for the database
+    ✔ database connection completed @done(22-02-05 01:21)
+    ✔ create schema for the database @done(22-02-05 01:52)
     food:
-      ☐ create food schema
-      ☐ name food
-      ☐ food image
-      ☐ food price 
-      ☐ food decription(eg.jollof with chicken)
+      ✔ create food schema @done(22-02-05 01:52)
+      ✔ name food @done(22-02-05 01:52)
+      ✔ food image @done(22-02-05 01:52)
+      ✔ food price @done(22-02-05 01:52)
+      ✔ food description(eg.jollof with chicken) @done(22-02-05 01:52)
       ☐ food type (eg rice pizza)
-      ☐ created at 
-      ☐ updated at
+      ✔ created at @done(22-02-05 01:52)
+      ✔ updated at @done(22-02-05 01:52)
     
     user:
-      ☐ create a user schema
-      ☐ username
-      ☐ email
-      ☐ password
-      ☐ created At
-      ☐ updated At
+      ✔ create a user schema @done(22-02-05 02:24)
+      ✔ username @done(22-02-05 02:24)
+      ✔ email @done(22-02-05 02:24)
+      ✔ password @done(22-02-05 02:24)
+      ✔ created At @done(22-02-05 02:24)
+      ✔ updated At @done(22-02-05 02:24)
 
 
   controller:
