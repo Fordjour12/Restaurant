@@ -5,6 +5,7 @@ const foodSchema = new Schema({
 	name: {
 		type: String,
 		required: true,
+		unique: true,
 	},
 	image: {
 		type: String,
@@ -13,7 +14,7 @@ const foodSchema = new Schema({
 	food_type: {
 		type: String,
 		required: true,
-	}, 
+	},
 	price: {
 		type: Number,
 		required: true,
