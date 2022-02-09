@@ -7,8 +7,9 @@ const createError = require('http-errors')
 // eslint-disable-next-line no-unused-vars
 const mongo = require('./helpers/init_mongoose.helper')
 
-const indexRouter = require('./routes/index')
-const usersRouter = require('./routes/users')
+const indexRouter = require('./routes/index.routes')
+const usersRouter = require('./routes/users.routes')
+const productsRouter = require('./routes/product.routes')
 
 const app = express()
 
@@ -20,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
+app.use('/products', productsRouter)
 
 app.use(async (Request, Response, Next) => {
 	Next(createError.NotFound())

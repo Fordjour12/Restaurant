@@ -92,3 +92,6 @@ Restaurant Backend:
 
 
 
+ "key": "tab",
+        "command": "selectNextSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
