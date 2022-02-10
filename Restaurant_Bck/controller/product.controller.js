@@ -48,22 +48,20 @@ exports.allProducts = async (_Request, Response, Next) => {
 	}
 }
 
-//needs refining
 exports.singleProduct = async (Request, Response, Next) => {
-	let prod
 	try {
 		const prodInfo = Request.params.id
-		prod = await product.findById(prodInfo)
+		const prod = await product.findById(prodInfo)
 		if (prod == null) {
 			throw createError.NotFound(`${prodInfo} is not found`)
 		}
+		Response.status(200).json(prod)
 	} catch (error) {
 		if (!error.statusCode || error) {
 			error.statusCode = createError.InternalServerError
 		}
+		Next(error)
 	}
-	Response.prod = prod
-	Next()
 }
 
 exports.updateProduct = async (Request, Response, Next) => {
