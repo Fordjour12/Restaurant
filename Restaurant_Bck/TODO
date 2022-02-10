@@ -8,7 +8,7 @@ Restaurant Backend:
     foods:
       ☐ getAll
       ☐ get/:id
-      ☐ post
+      ✔ post @done(22-02-09 23:26)
       ☐ update/:id
       ☐ delete/:id
     
@@ -48,11 +48,11 @@ Restaurant Backend:
     ☐ jwt refresh token verfication
 
     food controller:
-      ☐ controller for get foods
-      ☐ controller for single foods with id
-      ☐ controller for post new foods
-      ☐ controller for update old/new foods
-      ☐ controller for delete foods
+      ✔ controller for get foods @done(22-02-10 13:32)
+      ✔ controller for single foods with id @done(22-02-10 14:12)
+      ✔ controller for post new foods @done(22-02-09 23:26)
+      ✔ controller for update old/new foods @done(22-02-10 14:52)
+      ✔ controller for delete foods @done(22-02-10 14:52)
 
     user controller: 
       ☐ controller for get foods
@@ -92,3 +92,6 @@ Restaurant Backend:
 
 
 
+ "key": "tab",
+        "command": "selectNextSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"

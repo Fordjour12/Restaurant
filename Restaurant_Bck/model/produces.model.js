@@ -1,7 +1,6 @@
 const { Schema, model } = require('mongoose')
 
 const foodSchema = new Schema({
-	_id: { required: true },
 	name: {
 		type: String,
 		required: true,
