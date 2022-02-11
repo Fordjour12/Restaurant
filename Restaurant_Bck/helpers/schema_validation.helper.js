@@ -11,7 +11,7 @@ const productSchema = joi.object({
 const userSchema = joi.object({
 	username: joi.string().min(3).required(),
 	email: joi.string().email().lowercase(),
-	password: joi.string().min(6).pattern(new RegExp('^[a-zA-Z0-9]{3-30}$')),
+	password: joi.string().min(6).pattern(new RegExp('^[A-Za-z0-9].{6,30}$')),
 })
 
 module.exports = { productSchema, userSchema }
