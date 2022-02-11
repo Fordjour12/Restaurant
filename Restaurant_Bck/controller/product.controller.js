@@ -3,7 +3,7 @@ const createError = require('http-errors')
 // model
 const product = require('../model/produces.model')
 
-// helper methods
+// helper methods (product validation)
 const { productSchema } = require('../helpers/schema_validation.helper')
 
 exports.newProduct = async (Request, Response, Next) => {
