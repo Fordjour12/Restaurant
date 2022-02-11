@@ -26,7 +26,7 @@ Restaurant Backend:
       ✔ food image @done(22-02-05 01:52)
       ✔ food price @done(22-02-05 01:52)
       ✔ food description(eg.jollof with chicken) @done(22-02-05 01:52)
-      ☐ food type (eg rice pizza)
+      ✔ food type (eg rice pizza) @done(22-02-10 18:02)
       ✔ created at @done(22-02-05 01:52)
       ✔ updated at @done(22-02-05 01:52)
     
