@@ -40,10 +40,10 @@ Restaurant Backend:
 
 
   controller:
-    ☐ login
-    ☐ signup
+    ✔ login @done(22-02-11 13:22)
+    ✔ signup @done(22-02-11 13:22)
     ☐ logout
-    ☐ jwt access tokens
+    ✔ jwt access tokens @done(22-02-11 22:19)
     ☐ jwt refresh tokens
     ☐ jwt refresh token verfication
 

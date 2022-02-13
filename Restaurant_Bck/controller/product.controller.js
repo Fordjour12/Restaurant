@@ -3,7 +3,7 @@ const createError = require('http-errors')
 // model
 const product = require('../model/produces.model')
 
-// helper methods (product validation)
+// helper methods
 const { productSchema } = require('../helpers/schema_validation.helper')
 
 exports.newProduct = async (Request, Response, Next) => {
@@ -11,6 +11,7 @@ exports.newProduct = async (Request, Response, Next) => {
 		const productInfo = await productSchema.validateAsync(Request.body)
 
 		const prod = await product.findOne(productInfo)
+		// const prod = await product.findOne({ name: productInfo.name })
 		if (prod) {
 			throw createError.Conflict(`${productInfo.name} already exist`)
 		}
@@ -25,7 +26,7 @@ exports.newProduct = async (Request, Response, Next) => {
 		})
 	} catch (error) {
 		if (error.isJoi === true) {
-			error.status = createError.UnprocessableEntity
+			error.status = 422
 		} else if (!error.statusCode || error) {
 			error.statusCode = createError.InternalServerError
 		}
@@ -48,20 +49,22 @@ exports.allProducts = async (_Request, Response, Next) => {
 	}
 }
 
+//needs refining
 exports.singleProduct = async (Request, Response, Next) => {
+	let prod
 	try {
 		const prodInfo = Request.params.id
-		const prod = await product.findById(prodInfo)
+		prod = await product.findById(prodInfo)
 		if (prod == null) {
 			throw createError.NotFound(`${prodInfo} is not found`)
 		}
-		Response.status(200).json(prod)
 	} catch (error) {
 		if (!error.statusCode || error) {
 			error.statusCode = createError.InternalServerError
 		}
-		Next(error)
 	}
+	Response.prod = prod
+	Next()
 }
 
 exports.updateProduct = async (Request, Response, Next) => {
@@ -81,7 +84,7 @@ exports.updateProduct = async (Request, Response, Next) => {
 		})
 	} catch (error) {
 		if (error.isJoi === true) {
-			error.status = createError.UnprocessableEntity
+			error.status = 422
 		} else if (!error.statusCode || error) {
 			error.statusCode = createError.InternalServerError
 		}
