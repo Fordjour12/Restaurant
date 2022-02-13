@@ -13,5 +13,7 @@ router.get('/', function (req, res) {
 
 router.post('/signup', userController.register)
 router.post('/login', userController.login)
+router.post('/refresh-token', userController.refreshToken)
+router.delete('/logout', userController.logout)
 
 module.exports = router

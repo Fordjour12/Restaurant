@@ -32,4 +32,13 @@ userSchema.pre('save', async function (Next) {
 	}
 })
 
+userSchema.methods.isValidPassword = async function (password) {
+	// eslint-disable-next-line no-useless-catch
+	try {
+		return await bcrypt.compare(password, this.password)
+	} catch (error) {
+		throw error
+	}
+}
+
 module.exports = model('User', userSchema)
