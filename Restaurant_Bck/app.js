@@ -6,6 +6,8 @@ const createError = require('http-errors')
 
 // eslint-disable-next-line no-unused-vars
 const mongo = require('./helpers/init_mongoose.helper')
+// eslint-disable-next-line no-unused-vars
+const redis = require('./helpers/init_redis.helper')
 
 const indexRouter = require('./routes/index.routes')
 const usersRouter = require('./routes/users.routes')
