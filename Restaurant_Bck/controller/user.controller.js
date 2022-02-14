@@ -11,6 +11,7 @@ const {
 	signRefreshToken,
 	verifyRefreshToken,
 } = require('../helpers/json_token.helper')
+const client = require('../helpers/init_redis.helper')
 
 exports.register = async (Request, Response, Next) => {
 	try {
@@ -91,3 +92,20 @@ exports.refreshToken = async (Request, Response, Next) => {
 	}
 }
 
+exports.logout = async (Request, Response, Next) => {
+	try {
+		const { refreshToken } = Request.body
+		if (!refreshToken) throw createError.BadRequest()
+		const userId = await verifyRefreshToken(refreshToken)
+		client.DEL(userId, (err, val) => {
+			if (err) {
+				console.log(err.message)
+				throw createError.InternalServerError()
+			}
+			console.log(val)
+			Response.sendStatus(204)
+		})
+	} catch (error) {
+		Next(error)
+	}
+}
