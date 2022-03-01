@@ -4,9 +4,12 @@ WORKDIR /src/api
 
 COPY package*.json ./
 
-RUN npm ci --only=production
+#RUN npm ci --only=production
+RUN npm install
 
 COPY . ./
 
-CMD ["node", "start"]
+EXPOSE 5000
+
+CMD ["node", "./bin/www"]
 
