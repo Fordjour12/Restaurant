@@ -1,0 +1,47 @@
+version: '3.9'
+
+services:
+    # mongodb
+    mongo_db:
+        container_name: mongodb
+        image: mongo:latest
+        restart: always
+        ports:
+            - 27017:27017
+        volumes:
+            - mongo_db:/data/db
+
+    #redis
+    db_cache:
+        container_name: redis_server
+        image: redis:6.2-alpine
+        restart: always
+        ports:
+            - 6379:6379
+        command: redis-server --save 20 1 --requirepass 6d556399cf64f7eaf7659a173a175fc5c54f0cb384038
+        volumes:
+            - db_cache:/data
+
+    #nodeapi
+    restaurant_api:
+        build:
+            context: .
+            dockerfile: Dockerfile
+            # target: main
+        ports:
+            - 5000:5000
+        depends_on: [-mongo_db, -db_cache]
+        env_file: .env
+        environment:
+            PORT: 5000
+            REDIS_HOST: db_cache
+            REDIS_PORT: 6379
+            REDIS_PASSWORD: 6d556399cf64f7eaf7659a173a175fc5c54f0cb384038
+            MONGODB_URI: mongodb://mongo_db:27017
+            REDIS_URL: redis://db_cache:6379
+        volumes:
+            - ./:/Backend
+
+volumes:
+    db_cache: {}
+    mongo_db: {}
