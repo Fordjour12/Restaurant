@@ -1,10 +1,51 @@
 @use '../utils/' as *;
 
-h1 {
-	font-size: rem(30);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-    height: 100vh;
-}
+.header {
+	margin-top: 0.5rem;
 
+	&-main {
+		font-size: rem(25);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&-title {
+			font-size: em(12);
+		}
+
+		&-icons {
+			fill: #fff;
+			width: em(16);
+
+			&-gp {
+				display: flex;
+				align-content: center;
+				justify-content: center;
+			}
+		}
+	}
+
+	&-search_bar {
+		width: 80%;
+		margin: auto;
+		padding: em(10) em(0);
+
+		&-label {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&-icon {
+				width: em(20);
+				margin-right: em(9);
+			}
+
+			&-sspace {
+				padding: em(7) em(50);
+				border-radius: em(9);
+				outline: none;
+				border: none;
+			}
+		}
+	}
+}
