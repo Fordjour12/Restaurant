@@ -1,8 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Menu from '../assets/images/Menu'
 import Notification from '../assets/images/Notification'
 import Wishlist from '../assets/images/Wishlist'
 import Search from '../assets/images/Search'
+import img1 from '../assets/images/pizza-2.png'
+import img2 from '../assets/images/soup.png'
+import img3 from '../assets/images/juice.png'
+import img4 from '../assets/images/spaghetti-2.png'
+import hero from '../assets/images/food.jpg'
+import { categories } from '../data/categories'
+import { foods } from '../data/foods'
 
 const Homepage = () => {
 	return (
@@ -35,15 +43,96 @@ const Homepage = () => {
 				</section>
 			</header>
 
-			<main>
-				<div className='meals-categories'>
-					<div>
-						<label htmlFor='categories'>categories</label>
-						<a href='#'>view all</a>
+			<main className='main'>
+				<section className='heroSection'>
+					<div className='round'>
+						<img
+							src={hero}
+							alt='hero-img'
+							className='heroSection-img'
+						/>
 					</div>
-					<section className='categories'></section>
-				</div>
+				</section>
+
+				<section className='meals-categories'>
+					<div className='meals-categories-header'>
+						<label
+							htmlFor='categories'
+							className='meals-categories-header-title'
+						>
+							categories
+						</label>
+						<Link to='#' className='meals-categories-header-link'>
+							view all
+						</Link>
+					</div>
+					<div className='meals-categories-info'>
+						<ul className='meals-categories-info-foods'>
+							{categories.map((category, idx) => {
+								const { img, name } = category
+
+								return (
+									<li
+										key={idx}
+										className='meals-categories-info-foods-list'
+									>
+										<img
+											src={img}
+											className='meals-categories-info-foods-img'
+											alt={name}
+										/>
+										<p>{name}</p>
+									</li>
+								)
+							})}
+						</ul>
+					</div>
+				</section>
+
+				<section className='popular'>
+					<div className='popular-food'>
+						<label htmlFor='foods' className='popular-food-title'>
+							Popular Foods
+						</label>
+						<ul className='popular-food-lists'>
+							{foods.map((food, idx) => {
+								const { img, name,price } = food
+								return (
+									<li
+										key={idx}
+										className='popular-food-lists-list'
+									>
+										<img
+											src={img}
+											className='popular-food-lists-list-img'
+											alt={name}
+										/>
+										<p className='popular-food-lists-list-title'>
+											{name}
+										</p>
+										<p className='popular-food-lists-list-price'>
+											{price}
+										</p>
+									</li>
+								)
+							})}
+						</ul>
+					</div>
+					<div className='popular-drinks'>
+						<label htmlFor='Drinks'>Popular Drinks</label>
+					</div>
+					<div className='popular-pizza'>
+						<label htmlFor='Pizza'>Popular Pizza</label>
+					</div>
+					<div className='popular-meat'>
+						<label htmlFor='Meat'>Popular Meat</label>
+					</div>
+					<div className='popular-soup'>
+						<label htmlFor='Soup'>Popular Soups</label>
+					</div>
+				</section>
 			</main>
+			<footer></footer>
 		</div>
 	)
 }

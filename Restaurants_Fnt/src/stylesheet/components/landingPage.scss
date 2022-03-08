@@ -41,10 +41,88 @@
 			}
 
 			&-sspace {
-				padding: em(7) em(50);
+				padding: em(12) em(50);
 				border-radius: em(9);
 				outline: none;
 				border: none;
+			}
+		}
+	}
+}
+
+.main {
+	.heroSection {
+		padding-top: em(20);
+		// display: flex;
+		// align-items: center;
+		// justify-content: center;
+		.round {
+			// border: 3px solid red;
+			border-radius: em(10);
+			overflow: hidden;
+			margin: em(0) em(10);
+		}
+		&-img {
+			max-width: 100%;
+		}
+	}
+	.meals-categories {
+		padding-top: em(10);
+
+		&-header {
+			padding-bottom: em(20);
+			display: flex;
+			justify-content: space-between;
+			margin: 0 em(10);
+
+			&-title,
+			&-link {
+				font-size: em(22);
+				text-transform: capitalize;
+			}
+
+			&-link {
+				color: var(--chocolate-web);
+			}
+		}
+
+		&-info {
+			margin: 0;
+			padding: em(19);
+
+			&-foods {
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+
+				&-list {
+					list-style: none;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+				}
+			}
+		}
+	}
+
+	.popular {
+		&-food {
+			padding-bottom: rem(32);
+
+			&-title {
+				font-size: em(25);
+				padding: em(0) em(16);
+			}
+
+			&-lists {
+				margin-top: em(10);
+
+				&-list {
+					list-style: none;
+					&-img {
+						max-width: 100%;
+					}
+				}
 			}
 		}
 	}
