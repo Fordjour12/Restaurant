@@ -7,7 +7,7 @@ services:
         image: mongo:latest
         restart: always
         ports:
-            - 27017:27017
+            - 27017
         volumes:
             - mongo_db:/data/db
 
@@ -17,7 +17,7 @@ services:
         image: redis:6.2-alpine
         restart: always
         ports:
-            - 6379:6379
+            - 6379
         command: redis-server --save 20 1 --requirepass 6d556399cf64f7eaf7659a173a175fc5c54f0cb384038
         volumes:
             - db_cache:/data
@@ -30,15 +30,17 @@ services:
             # target: main
         ports:
             - 5000:5000
-        depends_on: [-mongo_db, -db_cache]
+        depends_on:
+            - mongo_db
+            - db_cache
         env_file: .env
         environment:
             PORT: 5000
-            REDIS_HOST: db_cache
-            REDIS_PORT: 6379
             REDIS_PASSWORD: 6d556399cf64f7eaf7659a173a175fc5c54f0cb384038
-            MONGODB_URI: mongodb://mongo_db:27017
-            REDIS_URL: redis://db_cache:6379
+            MONGODB_URI: mongodb://mong_db:27017
+            REDIS_URL: redis://db_cache
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: example
         volumes:
             - ./:/Backend
 

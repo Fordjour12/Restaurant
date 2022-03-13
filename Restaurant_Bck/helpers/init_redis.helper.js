@@ -1,6 +1,10 @@
-const { createClient } = require('redis')
+const redis = require('redis')
+require('dotenv').config()
 
-const client = createClient({ port: 6379, host: '127.0.0.1' })
+const client = redis.createClient({
+	url: process.env.REDIS_URI,
+})
+
 // const client = createClient()
 
 client.on('connect', () => {
@@ -26,3 +30,5 @@ process.on('SIGINT', () => {
 })
 
 module.exports = client
+
+// #MONGODB_URI = mongodb+srv://thephantomdev-trial:8CiqfoLglFkBmhEv@cluster0.74xar.mongodb.net/Restaurant?retryWrites=true&w=majority

@@ -1,7 +1,9 @@
 Restaurant Frontend:
-  ☐ 
-
-
+  header:
+    ✔ navigation @done(22-03-06 16:37)
+    ✔ prod-name @done(22-03-06 16:37)
+    ✔ foods menu display @done(22-03-06 16:38)
+    ✔ search bar @done(22-03-06 16:38)
 
   Categorise:
     Pizza:
@@ -13,6 +15,9 @@ Restaurant Frontend:
     Lunch:
       ☐ 
 
+  
+  wishlist:
+    ☐ 
 
   checkout:
     ☐ 
